@@ -1,2 +1,29 @@
-# IEORE4571-Recommendation-System
-This repository contains project work done on Movie Lens using ALS and final project on Deep learning based RecSys.
+1. `data_preprocessing.py` reads the ratings.csv file in the data/ directory and generates a pickle file.
+The file pickled is of the format:
+    ```
+    { 
+    movie-id-1 : [<list of user's rating>],
+
+    movie-id-2 : [<list of user's rating>]
+    ...
+    }
+    ```
+
+2. `index.py` reads the generated pickle file and creates an annoy index <br>
+#### COMMANDS TO RUN FOR DATA PREPROCESSING
+default settings : `python data_preprocessing.py`[The default setting assumes your ratings.csv files are in data/ folder]<br> 
+custom path settings: `python data_processing.py -rf ../data/ml-latest-small/ratings.csv -wp ../data/small-movie-user.p -dim 610`
+
+where 
+1. rf: reading csv file path
+2. wp: write path for pickle
+3. dim: dimension of the user (total unique user in the dataset)
+
+#### COMMANDS TO RUN FOR ANNOY INDEX
+default settings: `python index.py` [The default setting assumes your files are in data/ folder]<br>
+custom path settings: `python index.py -rp ../data/small-movie-user.p -annoy ../data/small-movie-user.ann -dim 610`
+
+where:
+1. rp: reading pickle file path
+2. annoy: writing annoy index path
+3. dim: dimension of the user (total unique users in the dataset)
