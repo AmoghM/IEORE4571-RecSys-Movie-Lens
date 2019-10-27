@@ -1,0 +1,8 @@
+annoy==1.16.2
+numpy==1.17.3
+pandas==0.24.2
+py4j==0.10.7
+pyspark==2.3.2
+python-dateutil==2.8.0
+pytz==2019.3
+six==1.12.0
