@@ -1,4 +1,5 @@
 .vscode
 venv3
-data/ml.*
-src/_pycache_
+data/ml-20m/*
+data/ml-latest-small/*
+src/__pycache__/*
