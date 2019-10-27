@@ -1,0 +1,4 @@
+.vscode
+venv3
+data/ml.*
+src/_pycache_
