@@ -1,5 +1,10 @@
 .vscode
 venv3
+<<<<<<< HEAD
 data/ml-20m/*
 data/ml-latest-small/*
 src/__pycache__/*
+=======
+data/ml.*
+src/_pycache_
+>>>>>>> fd27fb7e858e9df75cd1ab8cc47f8e1592bcfa4d
