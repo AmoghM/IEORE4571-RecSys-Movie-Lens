@@ -12,7 +12,7 @@ def create_annoy_index(pickle_path,write_annoy_path,dim):
     end = time.time()
     print("TIME TOOK TO INDEX %d dim and %d entries is %f" %( 610, len(movie_user), end-st))
 
-def load_annoy(read_annoy_path, dim):
+def load_annoy(read_annoy_path, dim=610):
     an = AnnoyIndex(dim,'angular')
     an.load(read_annoy_path)
     return an
@@ -35,4 +35,4 @@ if __name__ == '__main__':
     args = parser.parse_args()
     create_annoy_index(args.rp,args.annoy,args.dim)
     an = load_annoy(args.annoy,args.dim)
-    get_nearest_items(an,450,10) #for testing
+    print(get_nearest_items(an,450,10)) #for testing
