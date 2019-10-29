@@ -28,8 +28,8 @@ def get_nearest_items(an,item,knn=10):
     
 if __name__ == '__main__':
     parser = ArgumentParser()
-    parser.add_argument("-rp", help="read movie user pickle", default="../data/small-movie-user.p")
-    parser.add_argument("-annoy", help="annoy index path", default="../data/small-movie-user.ann")
+    parser.add_argument("-rp", help="read movie user pickle", default="../data/train_dataset.p")
+    parser.add_argument("-annoy", help="annoy index path", default="../data/train.ann")
     parser.add_argument("-dim", help="dimension", default=610,type=int)
 
     args = parser.parse_args()
