@@ -10,6 +10,9 @@ The file pickled is of the format:
     ```
 
 2. `index.py` reads the generated pickle file and creates an annoy index <br>
+
+3. `predict_.py` outputs a set of recommendations for a user along with the predicted ratings.
+
 #### COMMANDS TO RUN FOR DATA PREPROCESSING
 default settings : `python data_preprocessing.py`[The default setting assumes your ratings.csv files are in data/ folder]<br> 
 custom path settings: `python data_processing.py -rf ../data/ml-latest-small/ratings.csv -wp ../data/small-movie-user.p -dim 610`
