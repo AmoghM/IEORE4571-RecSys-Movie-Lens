@@ -1,10 +1,11 @@
 from annoy import AnnoyIndex
 from argparse import ArgumentParser
-import time,pickle
+import time,pickle,json
 def create_annoy_index(pickle_path,write_annoy_path,dim):
     st = time.time()
     movie_user = pickle.load(open(pickle_path,'rb'))
-    t = AnnoyIndex(610, 'angular')
+    # movie_user = json.load(open(pickle_path))
+    t = AnnoyIndex(dim, 'angular')
     for k,v in movie_user.items():
         t.add_item(k, v)
     t.build(10) # 10 trees

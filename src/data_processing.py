@@ -62,19 +62,12 @@ def data_preprocess(path):
                 id_to_usr[id] = user
                 uid = id
                 id+=1
-            print(movie,user,uid,dim)
-            input()
+
             if movie not in movie_user:
                 movie_user[movie] = [0.0]*dim
 
-            # print(user,uid,usr_to_id)
-            try:
-                movie_user[movie][uid] = rating
-                tuple_movie_user.append((movie,uid))
-            except:
-                print("dasidbasdgho")
-                print(movie,user,uid,dim)
-                exit()
+            movie_user[movie][uid] = rating
+            tuple_movie_user.append((movie,uid))
 
     return movie_user, tuple_movie_user
 
@@ -99,8 +92,8 @@ def train_test_split(movie_user, tuple_movie_user):
     return train_data, test_data
 
 def export_dataset(data,export_path):
-    # pickle.dump(movie_user, open(export_path, "wb") )
-    json.dump(data,open(export_path,'w'))
+    pickle.dump(movie_user, open(export_path, "wb") )
+    # json.dump(data,open(export_path,'w'))
 
 if __name__ == '__main__':
     parser = ArgumentParser()
