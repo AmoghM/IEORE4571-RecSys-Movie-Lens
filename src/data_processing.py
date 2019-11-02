@@ -46,18 +46,29 @@ def data_preprocess(path):
     dim = len(df['userId'].unique())
     del df
 
-    movie_user, tuple_movie_user = {}, []
+    movie_user, tuple_movie_user, usr_to_id, id_to_usr = {}, [], {}, {}
     with open(path) as f:
         f.readline()
+        id = 0
         for row in f:
             r = row.split(",")
             movie = int(r[1])
             user = int(r[0])-1
             rating = float(r[2])
+
+            uid = usr_to_id.get(user,-1)
+            if uid == -1:
+                usr_to_id[user] = id
+                id_to_usr[id] = user
+                uid = id
+                id+=1
             if movie not in movie_user:
                 movie_user[movie] = [0.0]*dim
-            movie_user[movie][user] = rating
+            
+            # print(user,uid,usr_to_id)
+            movie_user[movie][uid] = rating
             tuple_movie_user.append((movie,user))
+            
 
     return movie_user, tuple_movie_user
 
