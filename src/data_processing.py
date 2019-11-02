@@ -98,9 +98,9 @@ def export_dataset(data,export_path):
 if __name__ == '__main__':
     parser = ArgumentParser()
     parser.add_argument("-rf", help="read path of the csv", default="../data/ml-latest-small/ratings.csv")
-    parser.add_argument("-d", help="write path of the pickle", default="../data/unmasked_dataset.json")
-    parser.add_argument("-train", help="write path of the pickle", default="../data/train_dataset.json")
-    parser.add_argument("-test", help="write path of the pickle", default="../data/test_dataset.json")
+    parser.add_argument("-d", help="write path of the pickle", default="../data/unmasked_dataset.p")
+    parser.add_argument("-train", help="write path of the pickle", default="../data/train_dataset.p")
+    parser.add_argument("-test", help="write path of the pickle", default="../data/test_dataset.p")
     # parser.add_argument("-dim", help="dimension", default=610,type=int)
     args = parser.parse_args()
     
