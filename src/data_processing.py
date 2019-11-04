@@ -10,12 +10,11 @@ def data_preprocess(path):
     with open(path) as f:
         f.readline()
         id = 0
-        for row in f:
+        for en, row in enumerate(f):
             r = row.split(",")
             movie = int(r[1])
             user = int(r[0])
             rating = float(r[2])
-
             uid = usr_to_id.get(user,-1)
             if uid == -1:
                 usr_to_id[user] = id
@@ -28,7 +27,7 @@ def data_preprocess(path):
 
             movie_user[movie][uid] = rating
             tuple_movie_user.append((movie,uid))
-            print(movie_user)
+
     return movie_user, tuple_movie_user, usr_to_id, id_to_usr
 
 def train_test_split(movie_user, tuple_movie_user):
@@ -46,7 +45,7 @@ def train_test_split(movie_user, tuple_movie_user):
         movie = test[0]
         user = test[1]
         rating = train_data[movie][user]
-        test_data[movie] = {user:rating}
+        test_data[user] = {movie:rating}
         train_data[movie][user] = 0
     return train_data, test_data
 
@@ -70,7 +69,7 @@ if __name__ == '__main__':
     export_dataset(movie_user, export_path = args.d)
     export_dataset(train_data,export_path = args.train)
     export_dataset(test_data, args.test)
-    export_dataset(uid,export_path ='../data/user_to_id.p')
-    export_dataset(idu,export_path ='../data/id_to_user.p')
+    export_dataset(uid,export_path ='../data/user_to_id.json')
+    export_dataset(idu,export_path ='../data/id_to_user.json')
 
 # EXAMPLE COMMAND TO RUN:  python data_processing.py -rf ../data/ml-latest-small/ratings.csv -wp ../data/small-movie-user.p -dim 610
