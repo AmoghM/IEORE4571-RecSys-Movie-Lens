@@ -1,3 +1,8 @@
+### output
+The output consists of plots RMSE vs Latent Factor at different levels of regularizing parameters. <br>
+```File format: rmse_<regularizing_parameter>_<year>.png``` For example: `rmse_0.01_2015.png`
+
+### src
 1. `data_preprocessing.py` reads the ratings.csv file in the data/ directory and generates a pickle file.
 The file pickled is of the format:
     ```
