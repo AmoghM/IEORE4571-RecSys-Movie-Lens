@@ -3,10 +3,11 @@ from argparse import ArgumentParser
 import time,pickle,json
 def create_annoy_index(pickle_path,write_annoy_path,dim):
     st = time.time()
-    movie_user = json.load(open(pickle_path,encoding='utf-8'))
+    movie_user = pickle.load(open(pickle_path,'rb'))
+    # movie_user = json.load(open(pickle_path))
     t = AnnoyIndex(dim, 'angular')
     for k,v in movie_user.items():
-        t.add_item(int(k), v)
+        t.add_item(k, v)
     t.build(10) # 10 trees
     t.save(write_annoy_path)
     end = time.time()
@@ -28,7 +29,7 @@ def get_nearest_items(an,item,knn=10):
     
 if __name__ == '__main__':
     parser = ArgumentParser()
-    parser.add_argument("-rp", help="read movie user pickle", default="../data/train_dataset.json")
+    parser.add_argument("-rp", help="read movie user pickle", default="../data/train_dataset.p")
     parser.add_argument("-annoy", help="annoy index path", default="../data/train.ann")
     parser.add_argument("-dim", help="dimension", default=610,type=int)
 
