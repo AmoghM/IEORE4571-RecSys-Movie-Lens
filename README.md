@@ -1,6 +1,7 @@
 ### Step to follow for recommendation on Movie Lens dataset:
 a) Pre-run step:
 * Clone the repository
+* Install packages and dependencies: `pip install -r requirements.txt`
 * Download "20MI" dataset from MovieLens here: https://grouplens.org/datasets/movielens/
 * Place the extracted folder into the `data/` of the repository
 * Run `data_subset.ipynb` in the `src` folder. It generates the subset of data on an annual basis starting from 2015 and going backward.
