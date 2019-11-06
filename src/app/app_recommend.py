@@ -6,7 +6,7 @@ from io import BytesIO
 from io import StringIO
 
 tmdb = TMDb()
-tmdb.api_key = '8b7c66ca53f19e908507247a0b0d1b00'
+tmdb.api_key = "<YOUR TOKEN>"
 tmdb.language = 'en'
 
 app = Flask(__name__,template_folder='./template')

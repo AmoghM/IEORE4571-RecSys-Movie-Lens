@@ -4,5 +4,3 @@ data/ml-20m/*
 data/ml-latest-small/*
 src/__pycache__/*
 src/.ipynb_checkpoints/*
-src/recommendation_LightFM.py
-src/recommendation_LightFM_WARP.ipynb
