@@ -1,0 +1,4 @@
+python data_processing.py -rf ../../data/ratings_subset14-15.csv -train ../../data/train_dataset14-15.json -test ../../data/test_dataset14-15.json -idu ../../data/id_to_user14-15.json -uid ../../data/user_to_id14-15.json
+python data_processing.py -rf ../../data/ratings_subset13-15.csv -train ../../data/train_dataset13-15.json -test ../../data/test_dataset13-15.json -idu ../../data/id_to_user13-15.json -uid ../../data/user_to_id13-15.json
+python data_processing.py -rf ../../data/ratings_subset12-15.csv -train ../../data/train_dataset12-15.json -test ../../data/test_dataset12-15.json -idu ../../data/id_to_user12-15.json -uid ../../data/user_to_id12-15.json
+python data_processing.py -rf ../../data/ratings_subset11-15.csv -train ../../data/train_dataset11-15.json -test ../../data/test_dataset11-15.json -idu ../../data/id_to_user11-15.json -uid ../../data/user_to_id11-15.json
