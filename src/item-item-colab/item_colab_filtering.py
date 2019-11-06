@@ -4,11 +4,6 @@ import json
 import evaluation
 
 def plot_error_K(test_dataset, tag, K):
-    with open("../../data/id_to_user"+ tag +".json", "r") as read_file:
-        id_to_user = json.load(read_file)
-    with open("../../data/user_to_id"+ tag +".json", "r") as read_file:
-        user_to_id = json.load(read_file)
-    
     log_error = {}
     t_values_error = []
     mae_values = []
@@ -33,7 +28,7 @@ def plot_error_K(test_dataset, tag, K):
     plt.title("MAE vs K")
     plt.xlabel("K values (KNN)")
     plt.ylabel("MAE")
-    plt.savefig('../../output/mae_values'+ tag +'.png')
+    plt.savefig('../../output/mae_vs_k'+ tag +'.png')
     
     f2 = plt.figure(2)
     plt.plot(K, rmse_values, marker='o', markerfacecolor='blue', color='skyblue', linewidth=1, label = 'Item-Item RMSE')
@@ -42,21 +37,17 @@ def plot_error_K(test_dataset, tag, K):
     plt.title("RMSE vs K")
     plt.xlabel("K values (KNN)")
     plt.ylabel("RMSE")
-    plt.savefig('../../output/rmse_values'+ tag +'.png')
+    plt.savefig('../../output/rmse_vs_k'+ tag +'.png')
     
     f3 = plt.figure(3)
     plt.plot(K, t_values_error, marker='o', markerfacecolor='blue', color='skyblue', linewidth=1)
     plt.title("Time vs K")
     plt.xlabel("K values (KNN)")
     plt.ylabel("Time (seconds)")
-    plt.savefig('../../output/time_values'+ tag +'.png')
+    plt.savefig('../../output/time_vs_k'+ tag +'.png')
     plt.show()
     
 def get_errors_time(test_dataset, tag, k):
-    with open("../../data/id_to_user"+ tag +".json", "r") as read_file:
-        id_to_user = json.load(read_file)
-    with open("../../data/user_to_id"+ tag +".json", "r") as read_file:
-        user_to_id = json.load(read_file)
     log_error = {}
     t_values_error = 0
     strt = time.time()

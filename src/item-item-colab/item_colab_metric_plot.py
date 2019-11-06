@@ -1,12 +1,16 @@
-import pandas as pd
-import json, random
+import json
 import item_colab_filtering
-import evaluation
 import matplotlib.pyplot as plt
 
+K = [20, 30, 40, 50, 60, 70, 80, 90, 100]
 tags = ['15-15','14-15', '13-15', '12-15', '11-15']
 
-#compare over datasets
+#generates 15-15 data plots, values ((mae, rmse, time) vs K)
+with open("../../data/test_dataset15-15.json", "r") as read_file:
+    test_dataset = json.load(read_file)
+item_colab_filtering.plot_error_K(test_dataset, '15-15',  K)
+
+#compare over datasets - scaling
 mae = []
 rmse = []
 times = []

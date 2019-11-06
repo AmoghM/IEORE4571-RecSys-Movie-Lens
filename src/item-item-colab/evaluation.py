@@ -2,7 +2,7 @@ import pandas as pd
 import index
 from sklearn.metrics import mean_squared_error
 from sklearn.metrics import mean_absolute_error
-import math, time, json
+import math, json
     
     
 def get_errors(test_data, tag, k):
@@ -41,7 +41,7 @@ def get_predicted_ratings(test_data, ratings, id_to_user, an, k):
         for each in test_data[entry]: #for each userId, movieId pair (both loops together)
             Num = 0
             Den = 0
-            each = int(each) ##
+            each = int(each)
             similar_items[each] = index.get_nearest_items(an, each, k)
             for item, its_sim in zip(similar_items[each][0], similar_items[each][1]):
                 if item in user_u_ratings['movieId'].tolist():
