@@ -1,5 +1,5 @@
 annoy==1.16.2
-numpy==1.17.3
+numpy==1.22.0
 pandas==0.24.2
 py4j==0.10.7
 pyspark==2.3.2
@@ -42,7 +42,7 @@ more-itertools==7.2.0
 nbconvert==5.6.1
 nbformat==4.4.0
 notebook==6.0.1
-numpy==1.17.3
+numpy==1.22.0
 pandas==0.24.2
 pandocfilters==1.4.2
 parso==0.5.1
